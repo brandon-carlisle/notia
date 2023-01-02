@@ -1,0 +1,3 @@
+# Notia
+
+## Quick note-taking.
