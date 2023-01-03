@@ -1,0 +1,21 @@
+.button {
+  background-color: #212529;
+  color: #f8f9fa;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 90%;
+  padding: 0.5rem;
+  transition: all 0.1s;
+}
+
+.button:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+  outline: 1px solid #212529;
+}
+
+.button:active {
+  transform: translateY(-10%);
+}
