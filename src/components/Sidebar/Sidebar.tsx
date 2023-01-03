@@ -2,6 +2,7 @@ import styles from './Sidebar.module.css';
 import fakenotesdb from '../../data/fakenotes.json';
 
 import Button from '../Button/Button';
+import NotePreview from './NotePreview';
 
 function Sidebar({}) {
   const fakeNotes = fakenotesdb;
@@ -10,13 +11,13 @@ function Sidebar({}) {
     <div className={styles.sidebar}>
       <NotiaLogo />
 
-      <div className={styles.add}>
+      <div className={styles.btn}>
         <Button text="Create note" />
       </div>
 
       <ul>
         {fakeNotes.map((note) => (
-          <li key={note.id}>{note.title}</li>
+          <NotePreview key={note.id} title={note.title} id={note.id} />
         ))}
       </ul>
     </div>
