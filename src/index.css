@@ -81,3 +81,9 @@ h6 {
 html {
   font-size: 62.5%;
 }
+
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
