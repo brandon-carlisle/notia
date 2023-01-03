@@ -1,10 +1,6 @@
 import styles from './Button.module.css';
 
-interface ButtonProps {
-  text: string;
-}
-
-function Button({ text }: ButtonProps) {
+function Button({ text }) {
   return <button className={styles.button}>{text}</button>;
 }
 

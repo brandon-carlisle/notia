@@ -4,7 +4,7 @@ import fakenotesdb from '../../data/fakenotes.json';
 import Button from '../Button/Button';
 import NotePreview from './NotePreview';
 
-function Sidebar({}) {
+function Sidebar({ notes }) {
   const fakeNotes = fakenotesdb;
 
   return (

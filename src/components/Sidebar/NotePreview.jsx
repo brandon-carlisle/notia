@@ -1,12 +1,7 @@
 import styles from './NotePreview.module.css';
 import { Link } from 'react-router-dom';
 
-interface NotePreviewProps {
-  title: string;
-  id: string;
-}
-
-function NotePreview({ title, id }: NotePreviewProps) {
+function NotePreview({ title, id }) {
   return (
     <li>
       <Link to={`/notes/${id}`}>
