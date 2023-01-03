@@ -32,13 +32,13 @@ body {
   5. Improve text rendering
 */
 body {
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #f8f9fa;
+  color: #212529;
+  font-weight: 400;
+  line-height: 1.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  color: #212529;
-  background-color: #f8f9fa;
 }
 
 /*
@@ -93,6 +93,6 @@ html {
 
 #root {
   display: flex;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }

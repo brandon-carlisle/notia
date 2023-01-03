@@ -1,17 +1,17 @@
 .sidebar {
   display: flex;
-  width: 35rem;
+  flex-direction: column;
+  gap: 2rem;
   border-right: solid 1px #e3e3e3;
   background-color: #f1f3f5;
-  flex-direction: column;
-  overflow-y: auto;
   padding: 1rem;
-  gap: 2rem;
+  width: 35rem;
+  overflow-y: auto;
 }
 
 .logo {
-  padding: 2rem;
   align-self: center;
+  padding: 2rem;
 }
 
 .add {

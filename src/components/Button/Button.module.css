@@ -1,13 +1,13 @@
 .button {
-  background-color: #212529;
-  color: #f8f9fa;
+  transition: all 0.1s;
+  cursor: pointer;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 2rem;
-  width: 90%;
+  background-color: #212529;
   padding: 0.5rem;
-  transition: all 0.1s;
+  width: 90%;
+  color: #f8f9fa;
+  font-size: 2rem;
 }
 
 .button:active {
