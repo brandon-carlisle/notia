@@ -10,12 +10,6 @@
   transition: all 0.1s;
 }
 
-.button:hover {
-  background-color: #f8f9fa;
-  color: #212529;
-  outline: 1px solid #212529;
-}
-
 .button:active {
-  transform: translateY(-10%);
+  transform: translateY(-5%);
 }
