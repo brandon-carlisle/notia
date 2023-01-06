@@ -9,7 +9,7 @@ import Root, {
 } from './routes/root';
 
 import ErrorPage from './routes/error-page';
-import Notes from './routes/notes';
+import Notes, { loader as notesLoader } from './routes/notes';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: 'notes/:noteID',
         element: <Notes />,
+        loader: notesLoader,
       },
     ],
   },

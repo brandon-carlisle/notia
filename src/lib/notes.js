@@ -22,3 +22,9 @@ export function createNote() {
 
   return newNote;
 }
+
+export function getNoteByID(noteID) {
+  console.log('getNoteByID was called');
+  const note = FAKE_NOTES_STORE.filter((note) => note.id === noteID);
+  return note[0];
+}
