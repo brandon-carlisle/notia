@@ -5,8 +5,6 @@ import Button from '../Button/Button';
 import NotePreview from './NotePreview';
 
 function Sidebar({ notes }) {
-  const fakeNotes = fakenotesdb;
-
   return (
     <div className={styles.sidebar}>
       <NotiaLogo />
@@ -16,7 +14,7 @@ function Sidebar({ notes }) {
       </div>
 
       <ul>
-        {fakeNotes.map((note) => (
+        {notes.map((note) => (
           <NotePreview key={note.id} title={note.title} id={note.id} />
         ))}
       </ul>
