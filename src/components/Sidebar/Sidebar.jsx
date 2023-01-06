@@ -1,6 +1,6 @@
-import styles from './Sidebar.module.css';
-import fakenotesdb from '../../data/fakenotes.json';
+import { Form } from 'react-router-dom';
 
+import styles from './Sidebar.module.css';
 import Button from '../Button/Button';
 import NotePreview from './NotePreview';
 
@@ -10,14 +10,20 @@ function Sidebar({ notes }) {
       <NotiaLogo />
 
       <div className={styles.btn}>
-        <Button text="Create note" />
+        <Form method="post">
+          <Button text="Create note" type="submit" />
+        </Form>
       </div>
 
-      <ul>
-        {notes.map((note) => (
-          <NotePreview key={note.id} title={note.title} id={note.id} />
-        ))}
-      </ul>
+      {notes.length === 0 ? (
+        <div>No notes found</div>
+      ) : (
+        <ul>
+          {notes.map((note) => (
+            <NotePreview key={note.id} title={note.title} id={note.id} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
