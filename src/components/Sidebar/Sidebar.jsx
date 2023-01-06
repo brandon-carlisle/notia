@@ -15,7 +15,7 @@ function Sidebar({ notes }) {
         </Form>
       </div>
 
-      {notes.length === 0 ? (
+      {!notes ? (
         <div>No notes found</div>
       ) : (
         <ul>

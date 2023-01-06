@@ -3,17 +3,17 @@ import { Outlet, useLoaderData } from 'react-router';
 import { getNotes, createNote } from '../lib/notes';
 
 export async function loader() {
-  const notes = getNotes();
-  return { notes };
+  const notes = await getNotes();
+  return notes;
 }
 
 export async function action() {
-  const note = createNote();
-  return { note };
+  const note = await createNote();
+  return note;
 }
 
 function Root({}) {
-  const { notes } = useLoaderData();
+  const notes = useLoaderData();
 
   return (
     <>

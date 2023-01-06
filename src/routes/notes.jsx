@@ -6,13 +6,6 @@ export async function loader({ params }) {
 }
 
 function Notes({}) {
-  // const FAKE_NOTE = {
-  //   id: '999',
-  //   dateCreated: new Date().toISOString(),
-  //   title: 'This is a FAKE NOTE',
-  //   content: 'This is the content to a fake note!',
-  // };
-
   const note = useLoaderData();
 
   return (
