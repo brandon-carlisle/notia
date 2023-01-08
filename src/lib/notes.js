@@ -3,16 +3,31 @@ import localforage from 'localforage';
 // TODO: ADD ERROR HANDLING FOR THESE FUNCTIONS
 export async function getNotes() {
   console.log('getNotes was called');
-  const notes = await localforage.getItem('notes');
+  const keys = await localforage.keys();
+  const notes = [];
+
+  keys.forEach(async (key) => {
+    const note = await localforage.getItem(key);
+    notes.push(note);
+  });
+
   return notes;
 }
 
 export async function createNote(note) {
-  // const newNote = FAKE_NOTE;
-  // FAKE_NOTES_STORE.push(newNote);
   console.log('createNote was called');
-  const newNote = await localforage.setItem('notes', note);
-  return newNote;
+  const id = crypto.randomUUID().toString();
+  const dateCreated = new Date().toString();
+
+  const createdNote = {
+    id,
+    dateCreated,
+    title: note.title,
+    content: note.content,
+  };
+
+  const setNote = await localforage.setItem(id, createdNote);
+  return setNote;
 }
 
 export function getNoteByID(noteID) {

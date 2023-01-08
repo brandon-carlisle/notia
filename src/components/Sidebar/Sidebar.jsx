@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import NotePreview from './NotePreview';
@@ -12,8 +13,8 @@ function Sidebar({ notes }) {
         Add note
       </Link>
 
-      {!notes ? (
-        <div>No notes found</div>
+      {notes.length === 0 ? (
+        <p>No notes yet!</p>
       ) : (
         <ul>
           {notes.map((note) => (

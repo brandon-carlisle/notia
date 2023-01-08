@@ -1,7 +1,7 @@
 import { Outlet, useLoaderData } from 'react-router';
 
 import Sidebar from '../components/Sidebar/Sidebar';
-import { createNote, getNotes } from '../lib/notes';
+import { getNotes } from '../lib/notes';
 
 export async function loader() {
   const notes = await getNotes();
