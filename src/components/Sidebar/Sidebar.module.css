@@ -14,7 +14,21 @@
   padding: 2rem;
 }
 
-.btn {
-  margin-bottom: 3rem;
+.link:link,
+.link:visited {
+  transition: all 0.1s;
+  cursor: pointer;
+  margin: 0 auto;
+  border: 1px solid var(--oc-gray-9);
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 90%;
+  color: inherit;
+  font-size: 2rem;
   text-align: center;
+  text-decoration: none;
+}
+
+.link:active {
+  transform: translateY(-5%);
 }

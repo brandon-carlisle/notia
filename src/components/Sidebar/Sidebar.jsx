@@ -1,6 +1,5 @@
-import { Form } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import Button from '../Button/Button';
 import NotePreview from './NotePreview';
 import styles from './Sidebar.module.css';
 
@@ -9,11 +8,9 @@ function Sidebar({ notes }) {
     <div className={styles.sidebar}>
       <NotiaLogo />
 
-      <div className={styles.btn}>
-        <Form method="post">
-          <Button text="Create note" type="submit" />
-        </Form>
-      </div>
+      <Link className={styles.link} to="create-note">
+        Add note
+      </Link>
 
       {!notes ? (
         <div>No notes found</div>

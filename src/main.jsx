@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import './index.css';
-import CreateNotePage from './routes/create-note';
+import CreateNotePage, {
+  action as createNoteAction,
+} from './routes/create-note';
 import ErrorPage from './routes/error-page';
 import NotesPage, { loader as notesLoader } from './routes/notes';
-import RootPage, {
-  action as rootAction,
-  loader as rootLoader,
-} from './routes/root';
+import RootPage, { loader as rootLoader } from './routes/root';
 
 const router = createBrowserRouter([
   {
@@ -17,12 +16,16 @@ const router = createBrowserRouter([
     element: <RootPage />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
-    action: rootAction,
     children: [
       {
         path: 'notes/:noteID',
         element: <NotesPage />,
         loader: notesLoader,
+      },
+      {
+        path: 'create-note',
+        element: <CreateNotePage />,
+        action: createNoteAction,
       },
     ],
   },
