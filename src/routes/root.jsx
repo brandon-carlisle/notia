@@ -7,6 +7,7 @@ export async function loader() {
   return notes;
 }
 
+// THIS WILL CREATE A FAKE NOTE FOR NOW
 export async function action() {
   const note = await createNote();
   return note;
