@@ -1,5 +1,6 @@
-import styles from './NotePreview.module.css';
 import { Link } from 'react-router-dom';
+
+import styles from './NotePreview.module.css';
 
 function NotePreview({ title, id }) {
   return (

@@ -1,8 +1,8 @@
 import { Form } from 'react-router-dom';
 
-import styles from './Sidebar.module.css';
 import Button from '../Button/Button';
 import NotePreview from './NotePreview';
+import styles from './Sidebar.module.css';
 
 function Sidebar({ notes }) {
   return (
