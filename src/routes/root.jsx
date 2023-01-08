@@ -14,7 +14,7 @@ export async function action() {
   return note;
 }
 
-function Root({}) {
+function RootPage({}) {
   const notes = useLoaderData();
 
   return (
@@ -25,4 +25,4 @@ function Root({}) {
   );
 }
 
-export default Root;
+export default RootPage;

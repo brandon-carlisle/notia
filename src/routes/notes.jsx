@@ -6,7 +6,7 @@ export async function loader({ params }) {
   return getNoteByID(params.noteID);
 }
 
-function Notes({}) {
+function NotesPage({}) {
   const note = useLoaderData();
 
   return (
@@ -19,4 +19,4 @@ function Notes({}) {
   );
 }
 
-export default Notes;
+export default NotesPage;

@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import './index.css';
+import CreateNotePage from './routes/create-note';
 import ErrorPage from './routes/error-page';
-import Notes, { loader as notesLoader } from './routes/notes';
-import Root, {
+import NotesPage, { loader as notesLoader } from './routes/notes';
+import RootPage, {
   action as rootAction,
   loader as rootLoader,
 } from './routes/root';
@@ -13,14 +14,14 @@ import Root, {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <RootPage />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
     action: rootAction,
     children: [
       {
         path: 'notes/:noteID',
-        element: <Notes />,
+        element: <NotesPage />,
         loader: notesLoader,
       },
     ],
