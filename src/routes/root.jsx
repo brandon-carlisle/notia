@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData } from 'react-router';
+import { Outlet } from 'react-router';
 
 import Sidebar from '../components/Sidebar/Sidebar';
 import { getNotes } from '../lib/notes';

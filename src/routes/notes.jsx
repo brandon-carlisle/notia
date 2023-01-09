@@ -1,14 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
-
-import { getNoteByID } from '../lib/notes';
-
-export async function loader({ params }) {
-  return getNoteByID(params.noteID);
-}
-
-function NotesPage({}) {
-  const note = useLoaderData();
-
+function NotePage({}) {
   return (
     <main>
       <p>ID: {note.id}</p>
@@ -19,4 +9,4 @@ function NotesPage({}) {
   );
 }
 
-export default NotesPage;
+export default NotePage;

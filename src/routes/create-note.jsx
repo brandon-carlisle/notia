@@ -21,12 +21,11 @@ function CreateNotePage() {
 }
 export default CreateNotePage;
 
-// THIS WILL CREATE A FAKE NOTE FOR NOW
+// THIS WILL CREATE NOTE
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  const note = await createNote(data);
-  return note;
+  return createNote(data);
 }
 
 // <p>ID: {note.id}</p>
