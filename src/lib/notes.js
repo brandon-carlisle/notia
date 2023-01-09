@@ -1,20 +1,14 @@
-import localforage from 'localforage';
+export function getNotes() {
+  const items = [...localStorage];
 
-// TODO: ADD ERROR HANDLING FOR THESE FUNCTIONS
-export async function getNotes() {
-  console.log('getNotes was called');
-  const keys = await localforage.keys();
-  const notes = [];
-
-  keys.forEach(async (key) => {
-    const note = await localforage.getItem(key);
-    notes.push(note);
-  });
-
-  return notes;
+  return items;
 }
 
-export async function createNote(note) {
+export function getAllKeys() {
+  return Object.keys(localStorage);
+}
+
+export function createNote(note) {
   console.log('createNote was called');
   const id = crypto.randomUUID().toString();
   const dateCreated = new Date().toString();
@@ -26,8 +20,7 @@ export async function createNote(note) {
     content: note.content,
   };
 
-  const setNote = await localforage.setItem(id, createdNote);
-  return setNote;
+  return localStorage.setItem(id, createdNote);
 }
 
 export function getNoteByID(noteID) {
@@ -43,5 +36,3 @@ export function getNoteByID(noteID) {
 //   content:
 //     'Sed risus ultricies tristique nulla. Blandit massa enim nec dui nunc mattis enim. Fringilla est ullamcorper eget nulla facilisi. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Et ultrices neque ornare aenean euismod elementum nisi. Sem fringilla ut morbi tincidunt augue interdum velit euismod in. Viverra nam libero justo laoreet sit amet cursus. In vitae turpis massa sed elementum tempus egestas. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent. Justo donec enim diam vulputate ut pharetra sit amet. Purus in massa tempor nec feugiat nisl pretium fusce id. Purus sit amet luctus venenatis. Tincidunt eget nullam non nisi est. Ipsum dolor sit amet consectetur adipiscing. Quisque non tellus orci ac auctor augue mauris. Imperdiet massa tincidunt nunc pulvinar. Massa ultricies mi quis hendrerit dolor.',
 // };
-
-// const FAKE_NOTES_STORE = [];

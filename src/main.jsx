@@ -15,17 +15,15 @@ const router = createBrowserRouter([
     path: '/',
     element: <RootPage />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
+
     children: [
       {
         path: 'notes/:noteID',
         element: <NotesPage />,
-        loader: notesLoader,
       },
       {
         path: 'create-note',
         element: <CreateNotePage />,
-        action: createNoteAction,
       },
     ],
   },
