@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import NotePreview from './NotePreview';
 import styles from './Sidebar.module.css';
 
-function Sidebar() {
-  const notes = [];
-
+function Sidebar({ notes }) {
   return (
     <div className={styles.sidebar}>
       <NotiaLogo />

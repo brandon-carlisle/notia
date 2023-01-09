@@ -8,25 +8,24 @@ import CreateNotePage, {
 } from './routes/create-note';
 import ErrorPage from './routes/error-page';
 import NotePage from './routes/notes';
-import RootPage from './routes/root';
+import RootPage, { loader as rootLoader } from './routes/root';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootPage />,
     errorElement: <ErrorPage />,
+    loader: rootLoader,
 
     children: [
       {
         path: 'notes/:noteID',
         element: <NotePage />,
-        errorElement: <ErrorPage />,
       },
       {
         path: 'create-note',
         element: <CreateNotePage />,
         action: createNoteAction,
-        errorElement: <ErrorPage />,
       },
     ],
   },

@@ -1,6 +1,6 @@
-export function getNotes() {
-  const items = [...localStorage];
-  return items;
+export function getStorage() {
+  const keys = getAllKeys();
+  return keys.map((key) => JSON.parse(localStorage.getItem(key)));
 }
 
 export function getAllKeys() {
@@ -8,9 +8,8 @@ export function getAllKeys() {
 }
 
 export function createNote(note) {
-  console.log('createNote was called');
-  const id = crypto.randomUUID().toString();
-  const dateCreated = new Date().toString();
+  const id = crypto.randomUUID();
+  const dateCreated = new Date();
 
   const createdNote = {
     id,
