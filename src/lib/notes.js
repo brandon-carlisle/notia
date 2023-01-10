@@ -7,6 +7,10 @@ export function getAllKeys() {
   return Object.keys(localStorage);
 }
 
+export function getNote(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
 export function createNote(note) {
   const id = crypto.randomUUID();
   const dateCreated = new Date();
