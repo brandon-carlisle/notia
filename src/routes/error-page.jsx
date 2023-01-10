@@ -1,22 +1,21 @@
-import { Link, isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 
 function ErrorPage() {
   const error = useRouteError();
+  console.error(error);
 
-  if (isRouteErrorResponse(error)) {
-    return (
-      <main>
+  return (
+    <div className="error-page">
+      <div>
         <h1>Oops!</h1>
-        <h2>{error.status}</h2>
-        <p>{error.statusText}</p>
-        {error.data?.message && <p>{error.data.message}</p>}
-
-        <Link to="/">Return Home</Link>
-      </main>
-    );
-  } else {
-    return <div>No note found with that ID 😭</div>;
-  }
+        <p>Sorry, an unexpected error has occurred.</p>
+        <p>
+          <i>{error.statusText || error.message}</i>
+        </p>
+        <Link to="/">Go Home.</Link>
+      </div>
+    </div>
+  );
 }
 
 export default ErrorPage;

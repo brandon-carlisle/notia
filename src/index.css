@@ -431,3 +431,10 @@ main {
   padding: 2rem 4rem;
   width: 100%;
 }
+
+.error-page {
+  display: grid;
+  place-items: center;
+  min-width: 100%;
+  min-height: 100vh;
+}

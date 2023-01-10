@@ -14,7 +14,6 @@ export function getNote(key) {
 export function createNote(note) {
   const id = crypto.randomUUID();
   const dateCreated = new Date();
-
   const createdNote = {
     id,
     dateCreated,
