@@ -4,6 +4,14 @@ import NotePreview from './NotePreview';
 import styles from './Sidebar.module.css';
 
 function Sidebar({ notes }) {
+  let notesSortedByDate;
+
+  if (notes) {
+    notesSortedByDate = notes.sort(
+      (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated),
+    );
+  }
+
   return (
     <div className={styles.sidebar}>
       <NotiaLogo />
@@ -12,15 +20,15 @@ function Sidebar({ notes }) {
         Add note
       </Link>
 
-      <ul>
-        {notes.length === 0 ? (
-          <p>No notes found!</p>
-        ) : (
-          notes.map((note) => (
+      {!notes && <p>No notes found!</p>}
+
+      {notes && (
+        <ul>
+          {notesSortedByDate.map((note) => (
             <NotePreview key={note.id} title={note.title} id={note.id} />
-          ))
-        )}
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

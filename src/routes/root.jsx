@@ -6,7 +6,6 @@ import { getAllNotes } from '../lib/notes';
 
 function RootPage({}) {
   const notes = useLoaderData();
-  console.log(notes);
 
   return (
     <>
