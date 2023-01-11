@@ -1,4 +1,17 @@
 .preview {
-  padding: 2rem;
+  border-top: 1px solid var(--oc-gray-4);
+  border-bottom: 1px solid var(--oc-gray-4);
+
+  padding-block: 1rem;
   font-size: 1.8rem;
+  text-align: center;
+}
+
+.preview a:link,
+.preview a:visited {
+  display: block;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
 }

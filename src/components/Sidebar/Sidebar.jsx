@@ -16,7 +16,7 @@ function Sidebar({ notes }) {
     <div className={styles.sidebar}>
       <NotiaLogo />
 
-      <Link className={styles.link} to="create-note">
+      <Link className={styles.createNote} to="create-note">
         Add note
       </Link>
 

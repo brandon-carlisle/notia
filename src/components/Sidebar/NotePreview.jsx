@@ -4,12 +4,8 @@ import styles from './NotePreview.module.css';
 
 function NotePreview({ title, id }) {
   return (
-    <li>
-      <Link to={`/notes/${id}`}>
-        <div className={styles.preview}>
-          <p>{title}</p>
-        </div>
-      </Link>
+    <li className={styles.preview}>
+      <Link to={`/notes/${id}`}>{title}</Link>
     </li>
   );
 }

@@ -15,24 +15,28 @@
 }
 
 .sidebar ul {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  list-style: none;
 }
 
-.link:link,
-.link:visited {
+.createNote:link,
+.createNote:visited {
   transition: all 0.1s;
   cursor: pointer;
   margin: 0 auto;
   border: 1px solid var(--oc-gray-9);
   border-radius: 5px;
   padding: 0.5rem;
-  width: 90%;
+  width: 100%;
   color: inherit;
   font-size: 2rem;
   text-align: center;
   text-decoration: none;
 }
 
-.link:active {
+.createNote:active {
   transform: translateY(-5%);
 }
