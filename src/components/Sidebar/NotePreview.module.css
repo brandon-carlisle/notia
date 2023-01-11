@@ -1,17 +1,18 @@
 .preview {
-  border-top: 1px solid var(--oc-gray-4);
-  border-bottom: 1px solid var(--oc-gray-4);
-
-  padding-block: 1rem;
+  border-radius: 5px;
   font-size: 1.8rem;
   text-align: center;
+}
+
+.preview:hover {
+  background-color: var(--oc-gray-3);
 }
 
 .preview a:link,
 .preview a:visited {
   display: block;
+  padding-block: 1rem;
   color: inherit;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  text-transform: capitalize;
 }
