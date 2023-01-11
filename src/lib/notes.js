@@ -4,6 +4,7 @@ export function getAllNotes() {
 
 export function getNote(id) {
   const allNotes = getAllNotes();
+  return allNotes.find((note) => note.id === id);
 }
 
 export function createNote(note) {
