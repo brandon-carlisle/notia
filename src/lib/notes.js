@@ -1,14 +1,9 @@
-export function getStorage() {
-  const keys = getAllKeys();
-  return keys.map((key) => JSON.parse(localStorage.getItem(key)));
+export function getAllNotes() {
+  return JSON.parse(localStorage.getItem('notes'));
 }
 
-export function getAllKeys() {
-  return Object.keys(localStorage);
-}
-
-export function getNote(key) {
-  return JSON.parse(localStorage.getItem(key));
+export function getNote(id) {
+  const allNotes = getAllNotes();
 }
 
 export function createNote(note) {
@@ -21,5 +16,18 @@ export function createNote(note) {
     content: note.content,
   };
 
-  return localStorage.setItem(id, JSON.stringify(createdNote));
+  addNoteToLocalStorage(createdNote);
+
+  return createdNote;
+}
+
+function addNoteToLocalStorage(note) {
+  if (!localStorage.getItem('notes')) {
+    localStorage.setItem('notes', JSON.stringify([]));
+  }
+
+  const prevNotes = JSON.parse(localStorage.getItem('notes'));
+  const newNotes = [...prevNotes, note];
+
+  return localStorage.setItem('notes', JSON.stringify(newNotes));
 }

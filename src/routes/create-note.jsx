@@ -1,4 +1,4 @@
-import { Form } from 'react-router-dom';
+import { Form, redirect } from 'react-router-dom';
 
 import Button from '../components/Button/Button';
 import { createNote } from '../lib/notes';
@@ -25,7 +25,8 @@ export default CreateNotePage;
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  return createNote(data);
+  const note = createNote(data);
+  return redirect(`/notes/${note.id}`);
 }
 
 // <p>ID: {note.id}</p>
