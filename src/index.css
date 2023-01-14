@@ -369,8 +369,8 @@ body {
 
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: var(--oc-grey-0);
-  color: var(--oc-grey-9);
+  background-color: var(--oc-gray-0);
+  color: var(--oc-gray-9);
   font-weight: 400;
   line-height: 1.5;
   font-family: Nunito;
