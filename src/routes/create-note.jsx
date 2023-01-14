@@ -1,6 +1,5 @@
 import { Form, redirect } from 'react-router-dom';
 
-import Button from '../components/Buttons/Button';
 import { createNote } from '../lib/notes';
 
 function CreateNotePage() {
@@ -14,7 +13,9 @@ function CreateNotePage() {
         <label htmlFor="content">content</label>
         <input type="text" id="content" name="content" />
 
-        <Button text="Create note" type="submit" />
+        <button text="Create note" type="submit">
+          Submit
+        </button>
       </Form>
     </main>
   );

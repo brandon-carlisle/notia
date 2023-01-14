@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-
-import NotePreview from './NotePreview';
 import styles from './Sidebar.module.css';
+import SidebarItem from './SidebarItem';
 
 function Sidebar({ notes }) {
   let notesSortedByDate;
@@ -18,7 +16,7 @@ function Sidebar({ notes }) {
       {notes && (
         <ul>
           {notesSortedByDate.map((note) => (
-            <NotePreview key={note.id} title={note.title} id={note.id} />
+            <SidebarItem key={note.id} title={note.title} id={note.id} />
           ))}
         </ul>
       )}

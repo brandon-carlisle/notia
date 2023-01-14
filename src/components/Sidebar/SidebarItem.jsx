@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import styles from './NotePreview.module.css';
+import styles from './SidebarItem.module.css';
 
-function NotePreview({ title, id }) {
+function SidebarItem({ title, id }) {
   return (
     <li className={styles.preview}>
       <Link to={`/notes/${id}`}>{title}</Link>
@@ -10,4 +10,4 @@ function NotePreview({ title, id }) {
   );
 }
 
-export default NotePreview;
+export default SidebarItem;
