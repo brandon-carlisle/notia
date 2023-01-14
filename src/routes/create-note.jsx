@@ -1,6 +1,6 @@
 import { Form, redirect } from 'react-router-dom';
 
-import Button from '../components/Button/Button';
+import Button from '../components/Buttons/Button';
 import { createNote } from '../lib/notes';
 
 function CreateNotePage() {
@@ -21,7 +21,7 @@ function CreateNotePage() {
 }
 export default CreateNotePage;
 
-// THIS WILL CREATE NOTE
+// THIS WILL GET FORM DATA AND CREATE NOTE
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
@@ -30,8 +30,3 @@ export async function action({ request }) {
 
   return redirect(`/notes/${note.id}`);
 }
-
-// <p>ID: {note.id}</p>
-// <p>Title: {note.title}</p>
-// <p>Content: {note.content}</p>
-// <p>Date: {note.dateCreated}</p>

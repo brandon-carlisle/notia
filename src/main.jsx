@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         loader: noteLoader,
       },
       {
-        path: 'create-note',
+        path: '/',
         element: <CreateNotePage />,
         action: createNoteAction,
       },

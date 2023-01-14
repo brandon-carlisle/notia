@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router';
 import { useLoaderData } from 'react-router';
 
+import CreateNoteButton from '../components/Buttons/CreateNoteButton';
 import Sidebar from '../components/Sidebar/Sidebar';
 import { getAllNotes } from '../lib/notes';
 
@@ -9,6 +10,7 @@ function RootPage({}) {
 
   return (
     <>
+      <CreateNoteButton />
       <Sidebar notes={notes} />
       <Outlet />
     </>
