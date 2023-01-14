@@ -25,7 +25,9 @@ export default CreateNotePage;
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
+  if (!data.title || !data.content) return redirect(`/`);
   const note = createNote(data);
+
   return redirect(`/notes/${note.id}`);
 }
 
