@@ -372,6 +372,7 @@ body {
   background-color: var(--oc-gray-0);
   color: var(--oc-gray-9);
   font-weight: 400;
+  font-size: 2rem;
   line-height: 1.5;
   font-family: Nunito;
 }
@@ -435,7 +436,7 @@ html {
 main {
   flex: 1;
   padding: 4rem;
-  width: 100%;
+  overflow-y: auto;
 }
 
 .error-page {

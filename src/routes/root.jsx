@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router';
 import { useLoaderData } from 'react-router';
 
@@ -13,6 +14,18 @@ function RootPage({}) {
       <CreateNoteButton />
       <Sidebar notes={notes} />
       <Outlet />
+      <div>
+        <Toaster
+          position="bottom-center"
+          toastOptions={{
+            // Define default options
+            duration: 3000,
+            style: {
+              fontSize: '20px',
+            },
+          }}
+        />
+      </div>
     </>
   );
 }
