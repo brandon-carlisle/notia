@@ -5,7 +5,7 @@ import styles from './SidebarItem.module.css';
 function SidebarItem({ title, id }) {
   return (
     <li className={styles.preview}>
-      <Link to={`/notes/${id}`}>{title}</Link>
+      <Link to={`/${id}`}>{title}</Link>
     </li>
   );
 }

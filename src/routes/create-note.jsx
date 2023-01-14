@@ -29,5 +29,5 @@ export async function action({ request }) {
   if (!data.title || !data.content) return redirect(`/`);
   const note = createNote(data);
 
-  return redirect(`/notes/${note.id}`);
+  return redirect(`/${note.id}`);
 }

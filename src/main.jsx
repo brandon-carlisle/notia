@@ -19,7 +19,7 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: 'notes/:noteID',
+        path: '/:noteID',
         element: <NotePage />,
         loader: noteLoader,
       },
