@@ -14,7 +14,7 @@ function Sidebar({ notes }) {
     <div className={styles.sidebar}>
       {!notes && <p>No notes found!</p>}
       {notes && (
-        <ul>
+        <ul className={styles.list}>
           {notesSortedByDate.map((note) => (
             <SidebarItem key={note.id} title={note.title} id={note.id} />
           ))}

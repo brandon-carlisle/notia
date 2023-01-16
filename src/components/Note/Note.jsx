@@ -10,8 +10,8 @@ function Note({ note }) {
   return (
     <div>
       <div className={styles.heading}>
-        <p className={styles.title}>{note.title}</p>
-        <p className={styles.date}>{date}</p>
+        <span className={styles.title}>{note.title}</span>
+        <span className={styles.date}>{date}</span>
       </div>
 
       <ReactMarkdown>{note.content}</ReactMarkdown>

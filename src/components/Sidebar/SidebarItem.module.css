@@ -1,15 +1,15 @@
-.preview {
+.item {
   border-radius: 5px;
   text-align: center;
   overflow-wrap: break-word;
 }
 
-.preview:hover {
+.item:hover {
   background-color: var(--oc-gray-3);
 }
 
-.preview a:link,
-.preview a:visited {
+.item a:link,
+.item a:visited {
   display: block;
   padding-block: 1rem;
   color: inherit;
