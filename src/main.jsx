@@ -7,7 +7,7 @@ import CreateNotePage, {
   action as createNoteAction,
 } from './routes/create-note';
 import ErrorPage from './routes/error-page';
-import NotePage, { loader as noteLoader } from './routes/note';
+import NotePage, { loader as noteLoader } from './routes/note-page';
 import RootPage, { loader as rootLoader } from './routes/root';
 
 const router = createBrowserRouter([

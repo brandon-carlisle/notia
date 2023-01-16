@@ -1,5 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 
+import Note from '../components/Note/Note';
 import { getNote } from '../lib/notes';
 
 function NotePage({}) {
@@ -7,10 +8,7 @@ function NotePage({}) {
 
   return (
     <main>
-      <p>ID: {note.id}</p>
-      <p>Title: {note.title}</p>
-      <p>Content: {note.content}</p>
-      <p>Date: {note.dateCreated}</p>
+      <Note note={note} />
     </main>
   );
 }
