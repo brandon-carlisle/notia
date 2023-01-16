@@ -7,7 +7,7 @@ function CreateNoteForm() {
       <input type="text" id="title" name="title" />
 
       <label htmlFor="content">content</label>
-      <input type="text" id="content" name="content" />
+      <textarea type="text" id="content" name="content" />
 
       <button text="Create note" type="submit">
         Submit

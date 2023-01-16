@@ -1,8 +1,12 @@
+import ReactMarkdown from 'react-markdown';
+
 function Note({ note }) {
   return (
     <div>
       <h1>{note.title}</h1>
-      <p>Content: {note.content}</p>
+
+      <ReactMarkdown>{note.content}</ReactMarkdown>
+
       <p>Date: {note.dateCreated}</p>
     </div>
   );
