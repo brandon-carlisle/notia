@@ -14,7 +14,7 @@ function Note({ note }) {
         <span className={styles.date}>{date}</span>
       </div>
 
-      <ReactMarkdown>{note.content}</ReactMarkdown>
+      <ReactMarkdown className={styles.markdown}>{note.content}</ReactMarkdown>
     </div>
   );
 }
