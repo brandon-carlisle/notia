@@ -431,7 +431,7 @@ body {
 
 main {
   flex: 1;
-  padding: 4rem;
+  padding: 3rem;
   overflow-y: auto;
 }
 
