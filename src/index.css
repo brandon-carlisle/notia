@@ -339,15 +339,12 @@
 *::after {
   box-sizing: border-box;
 }
-
 /*
-  2. Remove default margin and padding
+  2. Remove default margin
 */
 * {
   margin: 0;
-  padding: 0;
 }
-
 /*
   3. Allow percentage-based heights in the application
 */
@@ -355,28 +352,15 @@ html,
 body {
   height: 100%;
 }
-
 /*
   Typographic tweaks!
   4. Add accessible line-height
   5. Improve text rendering
 */
-
-@font-face {
-  src: url(./assets//Nunito-VariableFont_wght.ttf);
-  font-family: Nunito;
-}
-
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: var(--oc-gray-0);
-  color: var(--oc-gray-9);
-  font-weight: 400;
-  font-size: 2rem;
   line-height: 1.5;
-  font-family: Nunito;
 }
-
 /*
   6. Improve media defaults
 */
@@ -388,7 +372,6 @@ svg {
   display: block;
   max-width: 100%;
 }
-
 /*
   7. Remove built-in form typography styles
 */
@@ -398,7 +381,6 @@ textarea,
 select {
   font: inherit;
 }
-
 /*
   8. Avoid text overflows
 */
@@ -411,7 +393,6 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-
 /*
   9. Create a root stacking context
 */
@@ -420,11 +401,25 @@ h6 {
   isolation: isolate;
 }
 
-/*
-  Make 1rem = 10px
-*/
+/* Page styles */
+
 html {
   font-size: 62.5%;
+}
+
+@font-face {
+  src: url('./assets//Nunito-VariableFont_wght.ttf');
+  font-family: 'Nunito';
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--oc-gray-0);
+  color: var(--oc-gray-9);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.5;
+  font-family: 'Nunito', sans-serif;
 }
 
 #root {
