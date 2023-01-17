@@ -20,9 +20,6 @@ function RootPage({}) {
           toastOptions={{
             // Define default options
             duration: 3000,
-            style: {
-              fontSize: '20px',
-            },
           }}
         />
       </div>
