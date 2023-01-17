@@ -9,8 +9,8 @@ function Note({ note }) {
 
   return (
     <>
-      <Header alignItems="end">
-        <span className="font-semibold">{note.title}</span>
+      <Header>
+        <span className="font-semibold capitalize">{note.title}</span>
         <span>{date}</span>
       </Header>
 

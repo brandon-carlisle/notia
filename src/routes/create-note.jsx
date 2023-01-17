@@ -9,7 +9,7 @@ function CreateNotePage() {
   return (
     <main>
       <Header>
-        <span className="font-semibold">Create a note 📝</span>
+        <span className="font-semibold">Create a note</span>
       </Header>
       <CreateNoteForm />
     </main>

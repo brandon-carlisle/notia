@@ -4,10 +4,10 @@
 
 @layer base {
   #root {
-    @apply flex h-full w-full;
+    @apply flex min-h-screen w-full;
   }
 
   main {
-    @apply flex-1 overflow-x-auto border-l-2 p-12;
+    @apply flex-1 p-12;
   }
 }
