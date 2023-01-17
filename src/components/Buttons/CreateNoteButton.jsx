@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 
-import styles from './CreateNoteButton.module.css';
-
 function CreateNoteButton() {
   return (
-    <Link className={styles.createNoteBtn} to="/">
-      <div className={styles.lineContainer}>
-        <div className={`${styles.line} ${styles.lineOne}`}></div>
-        <div className={`${styles.line} ${styles.lineTwo}`}></div>
+    <Link
+      className="inline-block absolute right-8 bottom-8 rounded-full bg-gray-900 w-20 h-20"
+      to="/"
+    >
+      <div className="relative w-full h-full">
+        <div className="absolute top-1/2 left-1/2 rounded bg-gray-100 w-1/2 h-1 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 rounded bg-gray-100 w-1/2 h-1 -translate-x-1/2 -translate-y-1/2 rotate-90"></div>
       </div>
     </Link>
   );
