@@ -1,21 +1,23 @@
 import ReactMarkdown from 'react-markdown';
 
+import Header from '../Header/Header';
+
 function Note({ note }) {
   const date = new Intl.DateTimeFormat('en-gb', { dateStyle: 'long' }).format(
     new Date(note.dateCreated),
   );
 
   return (
-    <div>
-      <div className="flex flex-col justify-between items-end mb-16 pb-4 border-b-2 border-gray-300">
+    <>
+      <Header alignItems="end">
         <span className="font-semibold">{note.title}</span>
         <span>{date}</span>
-      </div>
+      </Header>
 
-      <ReactMarkdown className="prose lg:prose-xl">
+      <ReactMarkdown className="prose max-w-none lg:prose-xl prose-img:rounded-lg prose-img:self-center">
         {note.content}
       </ReactMarkdown>
-    </div>
+    </>
   );
 }
 export default Note;

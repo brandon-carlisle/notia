@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function CreateNoteButton() {
   return (
     <Link
-      className="inline-block absolute right-8 bottom-8 rounded-full bg-gray-900 w-20 h-20"
+      className="inline-block fixed right-8 bottom-8 rounded-full bg-gray-900 w-12 h-12"
       to="/"
     >
       <div className="relative w-full h-full">
