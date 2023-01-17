@@ -19,8 +19,8 @@ export default CreateNotePage;
 
 // THIS WILL GET FORM DATA AND CREATE NOTE
 export async function action({ request }) {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const data = Object.fromEntries(await request.formData());
+
   if (!data.title || !data.content)
     return toast.error('Title or note is empty', {
       icon: '🗒️',

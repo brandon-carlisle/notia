@@ -8,6 +8,6 @@
   }
 
   main {
-    @apply flex-1 p-12;
+    @apply h-screen flex-1 overflow-y-auto p-12;
   }
 }
