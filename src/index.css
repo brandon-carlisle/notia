@@ -2,16 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  src: url('./assets//Nunito-VariableFont_wght.ttf');
-  font-family: 'Nunito';
-}
-
 @layer base {
-  html {
-    font-family: 'Nunito', 'ui-sans-serif', 'system-ui';
-  }
-
   #root {
     @apply flex h-full w-full;
   }

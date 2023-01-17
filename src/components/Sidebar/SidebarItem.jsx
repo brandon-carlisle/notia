@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import styles from './SidebarItem.module.css';
-
 function SidebarItem({ title, id }) {
   return (
-    <li className={styles.item}>
-      <Link to={`/${id}`}>{title}</Link>
+    <li className="rounded-md text-center break-words hover:bg-gray-300 w-full">
+      <Link to={`/${id}`}>
+        <p className="w-full h-full py-2">{title}</p>
+      </Link>
     </li>
   );
 }
