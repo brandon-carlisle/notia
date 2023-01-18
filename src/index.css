@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply text-xl;
+  }
+
   #root {
     @apply flex min-h-screen w-full;
   }

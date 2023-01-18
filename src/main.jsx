@@ -25,12 +25,12 @@ const router = createBrowserRouter([
         action: createNoteAction,
       },
       {
-        path: '/:noteID',
+        path: ':noteID',
         element: <NotePage />,
         loader: noteLoader,
       },
       {
-        path: '/:noteID/remove-note',
+        path: ':noteID/remove-note',
         action: removeNoteAction,
       },
     ],
