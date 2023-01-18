@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Form, useLoaderData } from 'react-router-dom';
 
 import Note from '../components/Note/Note';
 import { getNote } from '../lib/notes';
@@ -18,3 +18,5 @@ export default NotePage;
 export function loader({ params }) {
   return getNote(params.noteID);
 }
+
+export function action() {}
