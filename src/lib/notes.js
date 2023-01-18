@@ -34,6 +34,9 @@ function addNoteToLocalStorage(note) {
 }
 
 export function removeNoteFromLocalStorage(noteID) {
-  const filteredNotes = getAllNotes().filter((note) => note.id !== noteID);
-  return console.log(filteredNotes);
+  const filteredNotes = JSON.stringify(
+    getAllNotes().filter((note) => note.id !== noteID),
+  );
+
+  return localStorage.setItem('notes', filteredNotes);
 }

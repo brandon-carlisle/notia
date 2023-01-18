@@ -9,6 +9,20 @@ function NotePage({}) {
   return (
     <main>
       <Note note={note} />
+
+      <Form
+        method="post"
+        action="remove-note"
+        onSubmit={(event) => {
+          if (!confirm('Please confirm you want to delete this record.')) {
+            event.preventDefault();
+          }
+        }}
+      >
+        <button className="underline font-bold text-4xl" type="submit">
+          Delete
+        </button>
+      </Form>
     </main>
   );
 }
