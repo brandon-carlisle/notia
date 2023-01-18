@@ -1,6 +1,5 @@
-import { useRef } from 'react';
 import { toast } from 'react-hot-toast';
-import { Form, useLoaderData, useSubmit } from 'react-router-dom';
+import { Form, useLoaderData, useParams, useSubmit } from 'react-router-dom';
 
 import Note from '../components/Note/Note';
 import { getNote } from '../lib/notes';
@@ -8,35 +7,31 @@ import { getNote } from '../lib/notes';
 function NotePage({}) {
   const note = useLoaderData();
   const submit = useSubmit();
-  const formRef = useRef();
+  const { noteID } = useParams();
 
   const submitHanlder = (event) => {
     event.preventDefault();
-
-    console.log(formRef.current);
 
     toast(
       (t) => (
         <span>
           <button
             onClick={() => {
-              console.log('clicked');
+              console.log(event.target);
 
-              submit(formRef.current, {
+              submit(null, {
                 method: 'post',
-                action: 'remove-note',
+                action: `${noteID}/remove-note`,
               });
 
               toast.dismiss(t.id);
             }}
           >
-            <strong>Delete?</strong>
+            Click to confirm
           </button>
         </span>
       ),
-      {
-        icon: '🤔',
-      },
+      { icon: '🖱️' },
     );
   };
 
@@ -44,7 +39,7 @@ function NotePage({}) {
     <main>
       <Note note={note} />
 
-      <Form ref={formRef} onSubmit={(event) => submitHanlder(event)}>
+      <Form onSubmit={(event) => submitHanlder(event)}>
         <button className="underline font-bold text-4xl" type="submit">
           Delete
         </button>
