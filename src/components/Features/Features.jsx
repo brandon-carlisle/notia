@@ -12,7 +12,7 @@ function Features() {
 
       <FeatureCard
         icon={<TbListSearch />}
-        text="Easily search through your notes"
+        text="Quickly search and organize your notes by date"
       />
 
       <FeatureCard
