@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-xl;
+    @apply text-xl text-gray-900;
   }
 
   #root {
