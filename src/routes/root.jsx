@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router';
 
 import CreateNoteButton from '../components/Buttons/CreateNoteButton';
 import Sidebar from '../components/Sidebar/Sidebar';
-import { getAllNotes, removeNoteFromLocalStorage } from '../lib/notes';
+import { getAllNotes } from '../lib/notes';
 
 function RootPage({}) {
   const notes = useLoaderData();

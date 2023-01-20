@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import './index.css';
+import Index from './routes';
 import CreateNotePage, {
   action as createNoteAction,
 } from './routes/create-note';
@@ -19,11 +20,13 @@ const router = createBrowserRouter([
     loader: rootLoader,
 
     children: [
+      { index: true, element: <Index /> },
       {
-        path: '/',
+        path: 'create-note',
         element: <CreateNotePage />,
         action: createNoteAction,
       },
+
       {
         path: ':noteID',
         element: <NotePage />,
