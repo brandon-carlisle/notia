@@ -4,12 +4,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import './index.css';
 import Index from './routes';
-import CreateNotePage, {
-  action as createNoteAction,
-} from './routes/create-note';
-import ErrorPage from './routes/error-page';
-import NotePage, { loader as noteLoader } from './routes/note-page';
-import { action as removeNoteAction } from './routes/remove-note';
+import CreatePage, { action as createAction } from './routes/create';
+import EditPage, { action as editAction } from './routes/edit';
+import ErrorPage from './routes/error';
+import NotePage, { loader as noteLoader } from './routes/note';
+import { action as removeAction } from './routes/remove';
 import RootPage, { loader as rootLoader } from './routes/root';
 
 const router = createBrowserRouter([
@@ -22,9 +21,9 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Index /> },
       {
-        path: 'create-note',
-        element: <CreateNotePage />,
-        action: createNoteAction,
+        path: 'create',
+        element: <CreatePage />,
+        action: createAction,
       },
 
       {
@@ -33,8 +32,14 @@ const router = createBrowserRouter([
         loader: noteLoader,
       },
       {
-        path: ':noteID/remove-note',
-        action: removeNoteAction,
+        path: ':noteID/edit',
+        element: <EditPage />,
+        loader: noteLoader,
+        action: editAction,
+      },
+      {
+        path: ':noteID/remove',
+        action: removeAction,
       },
     ],
   },

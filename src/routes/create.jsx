@@ -1,21 +1,21 @@
 import { toast } from 'react-hot-toast';
 import { redirect } from 'react-router-dom';
 
-import CreateNoteForm from '../components/CreateNote/CreateNoteForm';
 import Header from '../components/Header/Header';
+import NoteForm from '../components/NoteForm/NoteForm';
 import { createNote } from '../lib/notes';
 
-function CreateNotePage() {
+function CreatePage() {
   return (
     <main>
       <Header>
         <span className="font-semibold">Create a note</span>
       </Header>
-      <CreateNoteForm />
+      <NoteForm />
     </main>
   );
 }
-export default CreateNotePage;
+export default CreatePage;
 
 // THIS WILL GET FORM DATA AND CREATE NOTE
 export async function action({ request }) {

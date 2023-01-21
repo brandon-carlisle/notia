@@ -3,7 +3,7 @@ import SidebarItem from './SidebarItem';
 function Sidebar({ notes }) {
   let notesSortedByDate;
 
-  if (notes.length > 0) {
+  if (notes && notes.length > 0) {
     notesSortedByDate = notes.sort(
       (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated),
     );
@@ -11,8 +11,8 @@ function Sidebar({ notes }) {
 
   return (
     <div className="flex flex-col gap-8 py-8 px-4 w-1/5 overflow-y-auto h-screen border-r-2">
-      {notes.length === 0 && <p>No notes found!</p>}
-      {notes.length > 0 && (
+      {!notes && <p>No notes found!</p>}
+      {notes && notes.length > 0 && (
         <ul className="flex flex-col gap-4 w-full list-none">
           {notesSortedByDate.map((note) => (
             <SidebarItem key={note.id} title={note.title} id={note.id} />

@@ -1,6 +1,6 @@
 import { Form } from 'react-router-dom';
 
-function CreateNoteForm() {
+function NoteForm({ defaultTitle, defaultContent }) {
   return (
     <Form method="post" className="flex flex-col gap-3">
       <input
@@ -8,6 +8,7 @@ function CreateNoteForm() {
         id="title"
         name="title"
         className="px-4 py-2 border border-gray-200"
+        defaultValue={`${defaultTitle ? defaultTitle : ''}`}
       />
 
       <textarea
@@ -16,6 +17,7 @@ function CreateNoteForm() {
         name="content"
         className="p-4 border border-gray-200"
         rows="20"
+        defaultValue={`${defaultContent ? defaultContent : ''}`}
       />
 
       <button
@@ -28,4 +30,4 @@ function CreateNoteForm() {
     </Form>
   );
 }
-export default CreateNoteForm;
+export default NoteForm;

@@ -17,7 +17,7 @@ function DeleteNoteButton({ noteID }) {
 
               submit(null, {
                 method: 'post',
-                action: `${noteID}/remove-note`,
+                action: `${noteID}/remove`,
               });
 
               toast.dismiss(t.id);

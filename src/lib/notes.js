@@ -40,3 +40,13 @@ export function removeNoteFromLocalStorage(noteID) {
 
   return localStorage.setItem('notes', filteredNotes);
 }
+
+export function editNote(id, update) {
+  console.log(id);
+  console.log(update);
+
+  const notes = getAllNotes();
+  const idx = notes.findIndex((note) => note.id === id);
+
+  const newNotes = (notes[idx] = update);
+}
