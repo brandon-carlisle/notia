@@ -42,11 +42,11 @@ export function removeNoteFromLocalStorage(noteID) {
 }
 
 export function editNote(id, update) {
-  console.log(id);
-  console.log(update);
-
   const notes = getAllNotes();
   const idx = notes.findIndex((note) => note.id === id);
 
-  const newNotes = (notes[idx] = update);
+  notes[idx].title = update.title;
+  notes[idx].content = update.content;
+
+  localStorage.setItem('notes', JSON.stringify(notes));
 }

@@ -1,5 +1,5 @@
 import { toast } from 'react-hot-toast';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { redirect, useLoaderData, useParams } from 'react-router-dom';
 
 import Header from '../components/Header/Header';
 import NoteForm from '../components/NoteForm/NoteForm';
@@ -28,6 +28,7 @@ export async function action({ request, params }) {
     });
 
   editNote(params.noteID, data);
+  toast.success('Updated note', { icon: '✍️' });
 
-  return toast.success('Updated note', { icon: '✍️' });
+  return redirect(`/${params.noteID}`);
 }
