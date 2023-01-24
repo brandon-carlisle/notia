@@ -34,11 +34,17 @@ function addNoteToLocalStorage(note) {
 }
 
 export function removeNoteFromLocalStorage(noteID) {
+  console.log(getAllNotes());
+
   const filteredNotes = JSON.stringify(
     getAllNotes().filter((note) => note.id !== noteID),
   );
 
-  return localStorage.setItem('notes', filteredNotes);
+  if (getAllNotes().length === 1) {
+    localStorage.clear();
+  } else {
+    localStorage.setItem('notes', filteredNotes);
+  }
 }
 
 export function editNote(id, update) {

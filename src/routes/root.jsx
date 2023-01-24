@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router';
 import { useLoaderData } from 'react-router';
@@ -9,10 +10,14 @@ import { getAllNotes } from '../lib/notes';
 function RootPage({}) {
   const notes = useLoaderData();
 
+  console.log(notes);
+
   return (
     <>
       <CreateNoteButton />
-      <Sidebar notes={notes} />
+
+      {notes && <Sidebar notes={notes} />}
+
       <Outlet />
       <div>
         <Toaster
