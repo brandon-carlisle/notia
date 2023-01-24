@@ -3,7 +3,7 @@ import SidebarItem from './SidebarItem';
 function Sidebar({ notes }) {
   let notesSortedByDate;
 
-  if (notes && notes.length > 0) {
+  if (notes) {
     notesSortedByDate = notes.sort(
       (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated),
     );
