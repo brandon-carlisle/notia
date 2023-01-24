@@ -9,6 +9,7 @@ function NoteForm({ defaultTitle, defaultContent }) {
         name="title"
         className="px-4 py-2 border border-gray-200"
         defaultValue={`${defaultTitle ? defaultTitle : ''}`}
+        placeholder="Your note title"
       />
 
       <textarea
@@ -18,6 +19,7 @@ function NoteForm({ defaultTitle, defaultContent }) {
         className="p-4 border border-gray-200"
         rows="20"
         defaultValue={`${defaultContent ? defaultContent : ''}`}
+        placeholder="Write your markdown here..."
       />
 
       <button
