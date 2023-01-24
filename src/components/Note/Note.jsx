@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import { Form } from 'react-router-dom';
 
+import Button from '../Buttons/Button';
 import Header from '../Header/Header';
 
 function Note({ note }) {
@@ -14,12 +15,6 @@ function Note({ note }) {
         <span className="font-semibold capitalize">{note.title}</span>
         <span>{date}</span>
       </Header>
-
-      <Form action="edit">
-        <button type="submit" className="underline">
-          Edit
-        </button>
-      </Form>
 
       <ReactMarkdown className="prose max-w-none lg:prose-xl prose-img:rounded-lg prose-img:self-center">
         {note.content}

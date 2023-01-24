@@ -1,6 +1,8 @@
 import { toast } from 'react-hot-toast';
 import { Form, useSubmit } from 'react-router-dom';
 
+import Button from './Button';
+
 function DeleteNoteButton({ noteID }) {
   const submit = useSubmit();
 
@@ -33,9 +35,7 @@ function DeleteNoteButton({ noteID }) {
 
   return (
     <Form onSubmit={(event) => submitHanlder(event)}>
-      <button className="underline font-bold text-4xl" type="submit">
-        Delete
-      </button>
+      <Button text="Delete" />
     </Form>
   );
 }

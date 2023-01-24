@@ -1,5 +1,6 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Form, useLoaderData, useParams } from 'react-router-dom';
 
+import Button from '../components/Buttons/Button';
 import DeleteNoteButton from '../components/Buttons/DeleteNoteButton';
 import Note from '../components/Note/Note';
 import { getNote } from '../lib/notes';
@@ -11,7 +12,13 @@ function NotePage({}) {
   return (
     <main>
       <Note note={note} />
-      <DeleteNoteButton noteID={noteID} />
+
+      <div className="flex gap-2 mt-8">
+        <DeleteNoteButton noteID={noteID} />
+        <Form action="edit">
+          <Button text="Edit" />
+        </Form>
+      </div>
     </main>
   );
 }
