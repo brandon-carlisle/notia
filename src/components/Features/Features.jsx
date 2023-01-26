@@ -17,7 +17,7 @@ function Features() {
 
       <FeatureCard
         icon={<TbDatabaseOff />}
-        text="No need to worry about external servers - your notes are stored securely on your device"
+        text="No external servers - your notes are stored in your browser"
       />
     </div>
   );
