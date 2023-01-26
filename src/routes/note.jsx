@@ -14,10 +14,10 @@ function NotePage({}) {
       <Note note={note} />
 
       <div className="flex gap-2 mt-8">
-        <DeleteNoteButton noteID={noteID} />
         <Form action="edit">
           <Button text="Edit" />
         </Form>
+        <DeleteNoteButton noteID={noteID} />
       </div>
     </main>
   );
