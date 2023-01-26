@@ -16,7 +16,7 @@ function Note({ note }) {
         <span>{date}</span>
       </Header>
 
-      <ReactMarkdown className="prose max-w-none lg:prose-xl prose-img:rounded-lg prose-img:self-center">
+      <ReactMarkdown className="prose max-w-none lg:prose-xl prose-img:rounded-lg prose-img:mx-auto">
         {note.content}
       </ReactMarkdown>
     </>

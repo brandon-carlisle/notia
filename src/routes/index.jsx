@@ -11,7 +11,7 @@ function Index() {
       </header>
       <Features />
 
-      <ul className="list-disc mt-16 list-inside">
+      <ul className="mt-32 text-center space-y-2">
         <li>
           Notia uses the CommonMark spec to format any Markdown that you write
         </li>

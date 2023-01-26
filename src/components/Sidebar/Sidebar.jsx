@@ -13,7 +13,7 @@ function Sidebar({ notes }) {
   }
 
   return (
-    <div className="flex flex-col justify-between items-center gap-8 py-12 px-4 w-1/5 overflow-y-auto h-screen border-r-2">
+    <div className="flex flex-col items-center gap-8 py-12 px-4 w-1/5 overflow-y-auto h-screen border-r-2">
       <Link to="/">
         <TbHome className="text-3xl" />
       </Link>
