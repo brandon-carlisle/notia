@@ -5,12 +5,10 @@ import { useLoaderData } from 'react-router';
 
 import CreateNoteButton from '../components/Buttons/CreateNoteButton';
 import Sidebar from '../components/Sidebar/Sidebar';
-import { getAllNotes } from '../lib/notes';
+import { getNotes } from '../lib/notes';
 
 function RootPage({}) {
   const notes = useLoaderData();
-
-  console.log(notes);
 
   return (
     <>
@@ -37,6 +35,9 @@ function RootPage({}) {
 
 export default RootPage;
 
-export function loader() {
-  return getAllNotes();
+export function loader({ request }) {
+  const url = new URL(request.url);
+  const q = url.searchParams.get('q');
+
+  return getNotes(q);
 }

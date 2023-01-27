@@ -1,9 +1,36 @@
-export function getAllNotes() {
-  return JSON.parse(localStorage.getItem('notes'));
+// export function getAllNotes() {
+//   return JSON.parse(localStorage.getItem('notes'));
+// }
+
+// export function getFilteredNotes(q) {
+//   const query = q.toLowerCase();
+//   const notes = getAllNotes();
+
+//   const filteredNotes = notes.filter((note) =>
+//     note.title.toLowerCase().includes(query),
+//   );
+
+//   return filteredNotes;
+// }
+
+export function getNotes(q) {
+  const allNotes = JSON.parse(localStorage.getItem('notes'));
+
+  if (!q) {
+    return allNotes;
+  }
+
+  const query = q.toLowerCase();
+
+  const filteredNotes = allNotes.filter((note) =>
+    note.title.toLowerCase().includes(query),
+  );
+
+  return filteredNotes;
 }
 
 export function getNote(id) {
-  const allNotes = getAllNotes();
+  const allNotes = getNotes();
   return allNotes.find((note) => note.id === id);
 }
 
@@ -34,13 +61,11 @@ function addNoteToLocalStorage(note) {
 }
 
 export function removeNoteFromLocalStorage(noteID) {
-  console.log(getAllNotes());
-
   const filteredNotes = JSON.stringify(
-    getAllNotes().filter((note) => note.id !== noteID),
+    getNotes().filter((note) => note.id !== noteID),
   );
 
-  if (getAllNotes().length === 1) {
+  if (getNotes().length === 1) {
     localStorage.clear();
   } else {
     localStorage.setItem('notes', filteredNotes);
@@ -48,7 +73,7 @@ export function removeNoteFromLocalStorage(noteID) {
 }
 
 export function editNote(id, update) {
-  const notes = getAllNotes();
+  const notes = getNotes();
   const idx = notes.findIndex((note) => note.id === id);
 
   notes[idx].title = update.title;
