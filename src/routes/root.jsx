@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router';
 import { useLoaderData } from 'react-router';
@@ -8,13 +7,13 @@ import Sidebar from '../components/Sidebar/Sidebar';
 import { getNotes } from '../lib/notes';
 
 function RootPage({}) {
-  const notes = useLoaderData();
+  const { notes, q } = useLoaderData();
 
   return (
     <>
       <CreateNoteButton />
 
-      {notes && <Sidebar notes={notes} />}
+      {notes && <Sidebar notes={notes} query={q} />}
 
       <Outlet />
       <div>
@@ -38,6 +37,7 @@ export default RootPage;
 export function loader({ request }) {
   const url = new URL(request.url);
   const q = url.searchParams.get('q');
+  const notes = getNotes(q);
 
-  return getNotes(q);
+  return { notes, q };
 }

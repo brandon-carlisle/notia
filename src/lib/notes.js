@@ -1,18 +1,3 @@
-// export function getAllNotes() {
-//   return JSON.parse(localStorage.getItem('notes'));
-// }
-
-// export function getFilteredNotes(q) {
-//   const query = q.toLowerCase();
-//   const notes = getAllNotes();
-
-//   const filteredNotes = notes.filter((note) =>
-//     note.title.toLowerCase().includes(query),
-//   );
-
-//   return filteredNotes;
-// }
-
 export function getNotes(q) {
   const allNotes = JSON.parse(localStorage.getItem('notes'));
 
