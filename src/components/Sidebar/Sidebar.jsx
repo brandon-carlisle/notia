@@ -7,6 +7,7 @@ import {
 } from 'react-icons/tb';
 import { Form, Link } from 'react-router-dom';
 
+import Search from './Search';
 import SidebarItem from './SidebarItem';
 
 function Sidebar({ notes, query }) {
@@ -39,19 +40,7 @@ function Sidebar({ notes, query }) {
         </button>
       </div>
 
-      {displaySearch && (
-        <Form id="search-form" role="search" className="w-full">
-          <input
-            id="q"
-            aria-label="Search notes"
-            placeholder="Search"
-            type="search"
-            name="q"
-            className="block w-full px-4 py-2 text-gray-900 rounded-lg bg-gray-100"
-            defaultValue={query}
-          />
-        </Form>
-      )}
+      {displaySearch && <Search query={query} />}
 
       {notes && notes.length > 0 && (
         <ul className="flex flex-col gap-4 w-full list-none">
