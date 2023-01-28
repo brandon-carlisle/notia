@@ -1,7 +1,8 @@
-import { Form, useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
-import Button from '../components/Buttons/Button';
 import DeleteNoteButton from '../components/Buttons/DeleteNoteButton';
+import EditNoteButton from '../components/Buttons/EditNoteButton';
+import Header from '../components/Header/Header';
 import Note from '../components/Note/Note';
 import { getNote } from '../lib/notes';
 
@@ -9,16 +10,25 @@ function NotePage({}) {
   const note = useLoaderData();
   const { noteID } = useParams();
 
+  const date = new Intl.DateTimeFormat('en-gb', { dateStyle: 'long' }).format(
+    new Date(note.dateCreated),
+  );
+
   return (
     <main>
-      <Note note={note} />
+      <Header>
+        <div className="flex flex-col">
+          <span className="font-semibold capitalize">{note.title}</span>
+          <span>{date}</span>
+        </div>
 
-      <div className="flex gap-2 mt-8">
-        <Form action="edit">
-          <Button text="Edit" />
-        </Form>
-        <DeleteNoteButton noteID={noteID} />
-      </div>
+        <div className="flex gap-2">
+          <EditNoteButton />
+          <DeleteNoteButton noteID={noteID} />
+        </div>
+      </Header>
+
+      <Note note={note} />
     </main>
   );
 }

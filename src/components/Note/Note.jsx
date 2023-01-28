@@ -9,11 +9,6 @@ function Note({ note }) {
 
   return (
     <>
-      <Header>
-        <span className="font-semibold capitalize">{note.title}</span>
-        <span>{date}</span>
-      </Header>
-
       <ReactMarkdown className="prose max-w-none lg:prose-xl prose-img:rounded-lg prose-img:mx-auto">
         {note.content}
       </ReactMarkdown>
