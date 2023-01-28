@@ -13,7 +13,6 @@ import SidebarItem from './SidebarItem';
 function Sidebar({ notes, query }) {
   const [displaySearch, setDisplaySearch] = useState(true);
   const [noteSortedDesc, setNoteSortedDesc] = useState(true);
-  let notesSortedByDate;
 
   const toggleSearchbar = () => {
     setDisplaySearch(() => !displaySearch);
@@ -23,6 +22,7 @@ function Sidebar({ notes, query }) {
     setNoteSortedDesc(() => !noteSortedDesc);
   };
 
+  let notesSortedByDate;
   if (notes) {
     notesSortedByDate = notes.sort((a, b) => {
       if (noteSortedDesc) {
@@ -34,7 +34,7 @@ function Sidebar({ notes, query }) {
 
     return (
       <div className="flex flex-col items-center gap-8 py-12 px-4 w-1/5 overflow-y-auto h-screen border-r-2">
-        <div className="text-3xl flex items-center justify-center gap-2">
+        <div className="text-3xl flex flex-col md:flex-row items-center justify-center gap-2">
           <Link to="/">
             <TbHome />
           </Link>
