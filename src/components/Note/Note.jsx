@@ -1,7 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import { Form } from 'react-router-dom';
 
-import Button from '../Buttons/Button';
 import Header from '../Header/Header';
 
 function Note({ note }) {

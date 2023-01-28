@@ -1,5 +1,5 @@
 import { toast } from 'react-hot-toast';
-import { redirect, useLoaderData, useParams } from 'react-router-dom';
+import { redirect, useLoaderData } from 'react-router-dom';
 
 import Header from '../components/Header/Header';
 import NoteForm from '../components/NoteForm/NoteForm';
