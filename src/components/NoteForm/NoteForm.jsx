@@ -26,14 +26,16 @@ function NoteForm({ defaultTitle, defaultContent }) {
         placeholder="Write your markdown here..."
       />
 
-      <Button text="Submit" type="submit" />
-      <Button
-        text="Cancel"
-        type="button"
-        onClick={() => {
-          navigate(-1);
-        }}
-      />
+      <div className="flex flex-col md:flex-row gap-2">
+        <Button text="Submit" type="submit" />
+        <Button
+          text="Cancel"
+          type="button"
+          onClick={() => {
+            navigate(-1);
+          }}
+        />
+      </div>
     </Form>
   );
 }
