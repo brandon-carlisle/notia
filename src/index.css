@@ -1,21 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @layer base {
   body {
-    @apply text-xl text-gray-900;
+    @apply bg-gray-50 text-base text-gray-900 antialiased;
   }
 
   #root {
-    @apply flex min-h-screen w-full;
+    @apply flex min-h-screen w-full flex-col lg:flex-row;
   }
 
   main {
-    @apply h-screen flex-1 overflow-y-auto p-12;
-  }
-
-  .sidebar-item {
-    @apply inline-block h-full w-full break-words rounded-md py-2 px-4 text-center hover:bg-gray-300;
+    @apply min-h-0 flex-1 overflow-y-auto p-6 md:p-8 lg:h-full lg:p-12;
   }
 }
