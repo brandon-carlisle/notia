@@ -1,22 +1,36 @@
 # Notia
 
-Notia is a simple note taking web app that uses markdown to format your notes.
+Notia is a lightweight note taking app for writing and organizing Markdown notes in your browser.
 
-## Features:
+## Features
 
-- Easily format your notes with markdown
-- Quickly search and organize your notes by date
-- Notes are stored in your browsers local storage
-- Uses the CommonMark spec to format any Markdown that you write
+- Write and preview notes with GitHub Flavored Markdown (GFM)
+- Create, edit, delete, and view notes
+- Instantly search notes by title
+- Persist notes in browser local storage (no backend required)
 
-## Getting Started:
+## Getting Started
 
-- If you are unsure on how to write Markdown, please use [this short guide](https://commonmark.org/help/) to get started
-- Use the button in the bottom right of your screen to create a note.
+- If you are new to Markdown, use the [GitHub Flavored Markdown guide](https://github.github.com/gfm/).
+- Use the create note button in the app to add your first note.
 
-## What I used to create this project
+## Development
 
-- React
+```bash
+pnpm dev
+```
+
+## Scripts
+
+- `pnpm dev` - start the Vite development server
+- `pnpm build` - create a production build
+- `pnpm preview` - preview the production build
+- `pnpm typecheck` - run TypeScript type checks
+
+## Tech Stack
+
+- React 19
+- TanStack Router
 - Vite
-- Tailwind
-- Netlify
+- Tailwind CSS
+- TypeScript
