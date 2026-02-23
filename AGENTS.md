@@ -1,0 +1,1 @@
+Never pnpm install any packages - always ask the user to install the packages manually to avoid pnpm store issues. The same applies for updating and deleting packages.

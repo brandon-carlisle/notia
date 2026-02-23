@@ -1,8 +1,8 @@
 import { toast } from 'react-hot-toast';
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 
-import Header from '../components/Header/Header';
-import NoteForm from '../components/NoteForm/NoteForm';
+import Header from '../components/header';
+import NoteForm from '../components/note-form';
 import { createNote } from '../lib/notes';
 import type { NoteInput } from '../types/note';
 
@@ -27,9 +27,13 @@ function CreatePage() {
   return (
     <main>
       <Header>
-        <span className="font-semibold">Create a note</span>
+        <h1 className="text-2xl font-semibold tracking-tight">Create a note</h1>
       </Header>
-      <NoteForm onSubmit={handleCreate} />
+      <NoteForm
+        submitButtonText="Create note"
+        cancelButtonText="Cancel"
+        onSubmit={handleCreate}
+      />
     </main>
   );
 }

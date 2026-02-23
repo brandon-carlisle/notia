@@ -1,10 +1,9 @@
-import { notFound } from '@tanstack/react-router';
-import { createFileRoute } from '@tanstack/react-router';
+import { Outlet, createFileRoute, notFound, useRouterState } from '@tanstack/react-router';
 
-import DeleteNoteButton from '../components/Buttons/DeleteNoteButton';
-import EditNoteButton from '../components/Buttons/EditNoteButton';
-import Header from '../components/Header/Header';
-import Note from '../components/Note/Note';
+import DeleteNoteButton from '../components/delete-note-button';
+import EditNoteButton from '../components/edit-note-button';
+import Header from '../components/header';
+import Note from '../components/note';
 import { getNote } from '../lib/notes';
 
 export const Route = createFileRoute('/$noteID')({
@@ -19,6 +18,14 @@ export const Route = createFileRoute('/$noteID')({
 function NotePage() {
   const note = Route.useLoaderData();
   const { noteID } = Route.useParams();
+  const showingChildRoute = useRouterState({
+    select: (state) =>
+      state.matches.some((match) => match.routeId === '/$noteID/edit' || match.routeId === '/$noteID/remove'),
+  });
+
+  if (showingChildRoute) {
+    return <Outlet />;
+  }
 
   const date = new Intl.DateTimeFormat('en-gb', { dateStyle: 'long' }).format(
     new Date(note.dateCreated),
@@ -28,11 +35,11 @@ function NotePage() {
     <main>
       <Header>
         <div className="flex flex-col">
-          <span className="font-semibold capitalize">{note.title}</span>
-          <span>{date}</span>
+          <h1 className="text-3xl font-bold tracking-tight capitalize">{note.title}</h1>
+          <p className="text-sm text-gray-600">{date}</p>
         </div>
 
-        <div className="flex flex-col gap-2 md:flex-row">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <EditNoteButton noteID={noteID} />
           <DeleteNoteButton noteID={noteID} />
         </div>

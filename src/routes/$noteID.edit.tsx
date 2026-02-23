@@ -1,8 +1,8 @@
 import { toast } from 'react-hot-toast';
 import { createFileRoute, notFound, useNavigate } from '@tanstack/react-router';
 
-import Header from '../components/Header/Header';
-import NoteForm from '../components/NoteForm/NoteForm';
+import Header from '../components/header';
+import NoteForm from '../components/note-form';
 import { editNote, getNote } from '../lib/notes';
 import type { NoteInput } from '../types/note';
 
@@ -34,11 +34,13 @@ function EditPage() {
   return (
     <main>
       <Header>
-        <h1>Edit your note</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">Edit your note</h1>
       </Header>
       <NoteForm
         defaultTitle={note.title}
         defaultContent={note.content}
+        submitButtonText="Save changes"
+        cancelButtonText="Discard changes"
         onSubmit={handleEdit}
       />
     </main>

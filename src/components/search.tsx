@@ -21,7 +21,7 @@ function Search({ query = '' }: SearchProps) {
         placeholder="Search"
         type="search"
         name="q"
-        className="block w-full rounded-lg bg-gray-100 px-4 py-2 text-gray-900"
+        className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 placeholder:text-gray-500 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2"
         value={value}
         onChange={(event) => {
           const nextValue = event.currentTarget.value;
@@ -29,7 +29,7 @@ function Search({ query = '' }: SearchProps) {
 
           void navigate({
             to: '.',
-            search: (prev: { q?: string }) => ({
+            search: (prev) => ({
               ...prev,
               q: nextValue.trim() ? nextValue : undefined,
             }),

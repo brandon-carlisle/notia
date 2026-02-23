@@ -1,6 +1,11 @@
 import type { Note, NoteInput } from '../types/note';
 
 const NOTES_STORAGE_KEY = 'notes';
+const NOTES_CHANGED_EVENT = 'notia:notes-changed';
+
+function emitNotesChanged(): void {
+  window.dispatchEvent(new Event(NOTES_CHANGED_EVENT));
+}
 
 function readNotes(): Note[] {
   const raw = localStorage.getItem(NOTES_STORAGE_KEY);
@@ -26,6 +31,23 @@ function readNotes(): Note[] {
 
 function writeNotes(notes: Note[]): void {
   localStorage.setItem(NOTES_STORAGE_KEY, JSON.stringify(notes));
+  emitNotesChanged();
+}
+
+export function subscribeToNotesChanges(onStoreChange: () => void): () => void {
+  const handleStorageChange = (event: StorageEvent) => {
+    if (event.key === null || event.key === NOTES_STORAGE_KEY) {
+      onStoreChange();
+    }
+  };
+
+  window.addEventListener('storage', handleStorageChange);
+  window.addEventListener(NOTES_CHANGED_EVENT, onStoreChange);
+
+  return () => {
+    window.removeEventListener('storage', handleStorageChange);
+    window.removeEventListener(NOTES_CHANGED_EVENT, onStoreChange);
+  };
 }
 
 export function getNotes(query?: string): Note[] {
@@ -74,6 +96,7 @@ export function removeNoteFromLocalStorage(noteID: string): void {
   const filtered = readNotes().filter((note) => note.id !== noteID);
   if (filtered.length === 0) {
     localStorage.removeItem(NOTES_STORAGE_KEY);
+    emitNotesChanged();
     return;
   }
 

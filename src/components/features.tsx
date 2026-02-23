@@ -1,10 +1,10 @@
 import { TbDatabaseOff, TbListSearch, TbMarkdown } from 'react-icons/tb';
 
-import FeatureCard from './FeatureCard';
+import FeatureCard from './feature-card';
 
 function Features() {
   return (
-    <div className="grid grid-cols-1 place-items-center gap-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <FeatureCard
         icon={<TbMarkdown />}
         text="Easily format your notes with markdown"
@@ -12,7 +12,7 @@ function Features() {
 
       <FeatureCard
         icon={<TbListSearch />}
-        text="Quickly search and organize your notes by date"
+        text="Instantly search your notes"
       />
 
       <FeatureCard

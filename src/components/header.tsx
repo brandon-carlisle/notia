@@ -6,7 +6,7 @@ interface HeaderProps {
 
 function Header({ children }: HeaderProps) {
   return (
-    <header className="mb-16 flex flex-col justify-between gap-8 border-b-2 border-gray-300 pb-4 md:flex-row md:items-center md:gap-0">
+    <header className="mb-8 flex flex-col justify-between gap-4 border-b border-gray-200 pb-5 md:flex-row md:items-end md:gap-6">
       {children}
     </header>
   );

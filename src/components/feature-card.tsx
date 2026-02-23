@@ -7,9 +7,9 @@ interface FeatureCardProps {
 
 function FeatureCard({ icon, text }: FeatureCardProps) {
   return (
-    <div className="block h-full max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow-md">
-      <div className="mb-4 text-5xl text-gray-900">{icon}</div>
-      <p className="font-normal text-gray-700">{text}</p>
+    <div className="h-full rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+      <div className="mb-3 text-4xl text-gray-900">{icon}</div>
+      <p className="text-sm leading-6 text-gray-700">{text}</p>
     </div>
   );
 }
