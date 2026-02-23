@@ -4,7 +4,7 @@ import FeatureCard from './FeatureCard';
 
 function Features() {
   return (
-    <div className="grid gap-2 grid-cols-1 lg:grid-cols-3 place-items-center">
+    <div className="grid grid-cols-1 place-items-center gap-2 lg:grid-cols-3">
       <FeatureCard
         icon={<TbMarkdown />}
         text="Easily format your notes with markdown"
@@ -22,4 +22,5 @@ function Features() {
     </div>
   );
 }
+
 export default Features;

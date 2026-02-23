@@ -1,16 +1,14 @@
-import { Link, useRouteError } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
+import type { ErrorComponentProps } from '@tanstack/react-router';
 
-function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
-
+function ErrorPage({ error }: ErrorComponentProps) {
   return (
     <div className="error-page">
       <div>
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>
         <p>
-          <i>{error.statusText || error.message}</i>
+          <i>{error.message}</i>
         </p>
         <Link to="/">Go Home.</Link>
       </div>
